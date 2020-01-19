@@ -1,6 +1,6 @@
 # A Brief Introduction to Machine Learning (with Keras)
 
-To run this project, either use a locally installed jupyter with tensorflow, keras and pygraphviz, or simply run `docker-compose up` in this directory and use the provided docker image. It will have everything you need.
+To run this project, either use a locally installed jupyter with tensorflow 2, keras, sklearn, numpy and pygraphviz, or simply run `docker-compose up` in this directory and use the provided docker image. It will have everything you need.
 
 If you're new to Jupyter notebooks, running this command will create a running notebook server on your machine, exposed at port 8888.
 After running this command, you can go to http://127.0.0.1:8888 to see your server.

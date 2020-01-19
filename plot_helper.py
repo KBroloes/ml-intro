@@ -1,6 +1,8 @@
-import keras
+from tensorflow import keras
 from IPython.display import clear_output
 import matplotlib.pyplot as plt
+
+# Docs: https://www.tensorflow.org/api_docs/python/tf/keras/callbacks/Callback
 class PlotCallback(keras.callbacks.Callback):
     
     def __init__(self,max_epochs,print_every=5):
@@ -11,11 +13,11 @@ class PlotCallback(keras.callbacks.Callback):
         #score = model.evaluate(X_test, y_test, verbose=0)
         print("Epoch {} out of {}".format(epoch, self.max_epochs))
         print('Test loss: {:.2f}'.format(self.val_loss[-1]))
-        print('Test accuracy: {:.2f}%'.format(self.val_acc[-1]*100))
+        print('Test accuracy: {:.2f}%'.format(self.val_accuracy[-1]*100))
         
         # Accuracy plot
-        plt.plot(self.acc)
-        plt.plot(self.val_acc)
+        plt.plot(self.accuracy)
+        plt.plot(self.val_accuracy)
         plt.title('model accuracy')
         plt.ylabel('accuracy')
         plt.xlabel('epoch')
@@ -35,9 +37,9 @@ class PlotCallback(keras.callbacks.Callback):
     # This function is called when the training begins
     def on_train_begin(self, logs={}):
         self.loss = []
-        self.acc = []
+        self.accuracy = []
         self.val_loss = []
-        self.val_acc = []
+        self.val_accuracy = []
 
     # This function is called at the end of training
     def on_train_end(self, logs={}):
@@ -47,9 +49,9 @@ class PlotCallback(keras.callbacks.Callback):
     def on_epoch_end(self, epoch, logs={}):
         # Append the logs, losses and accuracies to the lists
         self.loss.append(logs.get('loss'))
-        self.acc.append(logs.get('acc'))
+        self.accuracy.append(logs.get('accuracy'))
         self.val_loss.append(logs.get('val_loss'))
-        self.val_acc.append(logs.get('val_acc'))
+        self.val_accuracy.append(logs.get('val_accuracy'))
 
         if epoch % self.print_every == 0:
             self.plot(epoch)
