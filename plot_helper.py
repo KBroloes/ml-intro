@@ -21,7 +21,7 @@ class PlotCallback(keras.callbacks.Callback):
         plt.title('model accuracy')
         plt.ylabel('accuracy')
         plt.xlabel('epoch')
-        plt.legend(['train', 'test'], loc='upper left')
+        plt.legend(['train', 'validation'], loc='upper left')
         plt.show()
         
         # Loss plot
@@ -30,7 +30,7 @@ class PlotCallback(keras.callbacks.Callback):
         plt.title('model loss')
         plt.ylabel('loss')
         plt.xlabel('epoch')
-        plt.legend(['train', 'test'], loc='upper left')
+        plt.legend(['train', 'validation'], loc='upper left')
         plt.show()
         clear_output(wait=True)
 

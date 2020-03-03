@@ -24,7 +24,7 @@ Have fun!
 
 If you're looking to install this manually on your machine you'll need:
 
-* Python 3.x
+* Python 3.6 or 3.7 (3.8 not supported yet by tensorflow 2)
 * Jupyter
 * Graphviz installed (For windows, remember to add it to your PATH environment variable)
 * pip3
