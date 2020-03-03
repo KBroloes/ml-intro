@@ -19,3 +19,26 @@ The exercises are labelled with numbers and I recommend starting with the first.
 If you're new to how jupyter notebooks work, I recommend the interactive tutorial at: https://jupyter.org/try (pick the classic one). It is a bit lengthy, and covers most features. We'll only need a subset, so you can also just experiment here.
 
 Have fun!
+
+## Dependencies
+
+If you're looking to install this manually on your machine you'll need:
+
+* Python 3.x
+* Jupyter
+* Graphviz installed (For windows, remember to add it to your PATH environment variable)
+* pip3
+
+### Graphviz notes
+
+For windows, go here: https://graphviz.gitlab.io/_pages/Download/Download_windows.html
+For mac: You can install graphviz using homebrew
+For ubuntu: Just apt-get install graphviz
+
+### Python dependencies
+
+* pygraphviz
+* numpy
+* tensorflow==2.1.0
+* sklearn
+* matplotlib
